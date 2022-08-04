@@ -1,0 +1,51 @@
+{
+  "name": "polynds/hypanel",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "hyperf"
+  ],
+  "description": "A control panel of hyperf service",
+  "autoload": {
+    "psr-4": {
+      "Polynds\\Hypanel\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "polynds",
+      "email": "2910508410@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "hyperf/command": "~2.2.0",
+    "hyperf/config": "~2.2.0"
+  },
+  "require-dev": {
+    "swoft/swoole-ide-helper": "^4.2",
+    "hyperf/ide-helper": "~2.2.0",
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "hyperf/testing": "~2.2.0",
+    "phpstan/phpstan": "^1.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "analyse": "phpstan analyse --memory-limit 1000M -c phpstan.neon",
+    "cs-fix": "php-cs-fixer fix $1",
+    "start": "php ./bin/hyperf.php start",
+    "test": "co-phpunit --prepend test/bootstrap.php -c phpunit.xml --colors=always"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "secure-http": false
+  },
+  "extra": {
+    "hyperf": {
+      "config": "Polynds\\Hypanel\\ConfigProvider"
+    }
+  }
+}
